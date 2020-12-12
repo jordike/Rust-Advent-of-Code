@@ -11,7 +11,7 @@ fn parse_line(line: String) -> (i32, i32, i32) {
     (length, width, height)
 }
 
-pub fn part1() -> Result<(), Box<dyn std::error::Error>> {
+pub fn part1() -> Result<i32, Box<dyn std::error::Error>> {
     let file_content = read_to_string("input/2015/day2.txt").unwrap();
 
     let mut total_area = 0;
@@ -33,10 +33,10 @@ pub fn part1() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("Total area: {}", total_area);
 
-    Ok(())
+    Ok(total_area)
 }
 
-pub fn part2() -> Result<(), Box<dyn std::error::Error>> {
+pub fn part2() -> Result<i32, Box<dyn std::error::Error>> {
     let file_content = read_to_string("input/2015/day2.txt").unwrap();
 
     let mut total_ribbon_length = 0;
@@ -56,5 +56,5 @@ pub fn part2() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("Total feet of ribbon: {}", total_ribbon_length);
 
-    Ok(())
+    Ok(total_ribbon_length)
 }

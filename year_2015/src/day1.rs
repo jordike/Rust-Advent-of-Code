@@ -1,6 +1,6 @@
 use std::fs::read_to_string;
 
-pub fn run() -> Result<(), Box<dyn std::error::Error>> {
+pub fn run() -> Result<i32, Box<dyn std::error::Error>> {
     let file_content = read_to_string("input/2015/day1.txt")
         .expect("Could not open input file. Does it exist?");
 
@@ -16,5 +16,5 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("Floor: {}", floor);
 
-    Ok(())
+    Ok(floor)
 }
