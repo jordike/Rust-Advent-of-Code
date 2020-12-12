@@ -36,7 +36,7 @@ pub fn part1(input: Option<String>) -> Result<i32, Box<dyn std::error::Error>> {
     Ok(total_area)
 }
 
-pub fn part2(input: OPtion<String>) -> Result<i32, Box<dyn std::error::Error>> {
+pub fn part2(input: Option<String>) -> Result<i32, Box<dyn std::error::Error>> {
     let file_content = read_input!(input, "input/2015/day2.txt");
 
     let mut total_ribbon_length = 0;
