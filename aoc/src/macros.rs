@@ -13,3 +13,13 @@ macro_rules! str_to_i32 {
         $string.to_string().parse::<i32>().unwrap();
     };
 }
+
+#[macro_export]
+macro_rules! read_input {
+    ($input:expr, $file_path:literal) => {
+        $input.unwrap_or_else(|| {
+            read_to_string($file_path)
+                .expect("Could not open input file. Does it exist?")
+        });
+    };
+}

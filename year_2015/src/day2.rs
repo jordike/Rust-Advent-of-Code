@@ -1,6 +1,6 @@
-use aoc::str_to_i32;
 use std::cmp::min;
 use std::fs::read_to_string;
+use aoc::{str_to_i32, read_input};
 
 fn parse_line(line: String) -> (i32, i32, i32) {
     let dimensions: Vec<&str> = line.split("x").collect();
@@ -11,8 +11,8 @@ fn parse_line(line: String) -> (i32, i32, i32) {
     (length, width, height)
 }
 
-pub fn part1() -> Result<i32, Box<dyn std::error::Error>> {
-    let file_content = read_to_string("input/2015/day2.txt").unwrap();
+pub fn part1(input: Option<String>) -> Result<i32, Box<dyn std::error::Error>> {
+    let file_content = read_input!(input, "input/2015/day2.txt");
 
     let mut total_area = 0;
 
