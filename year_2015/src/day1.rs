@@ -1,15 +1,8 @@
-use std::vec::Vec;
 use std::fs::read_to_string;
 
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
-    let args: Vec<String> = std::env::args().collect();
-
-    if args.len() < 2 {
-        panic!("Please provide an input file!");
-    }
-
-    let input_path = &args[1]; // Ignore the first argument, because it is the executable.
-    let file_content: String = read_to_string(input_path)?;
+    let file_content = read_to_string("input/2015/day1.txt")
+        .expect("Could not open input file. Does it exist?");
 
     let mut floor = 0;
 
