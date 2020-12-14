@@ -1,8 +1,9 @@
 use std::fs::read_to_string;
 use aoc::{str_to_i32, read_input};
 
-pub fn run(input: Option<String>) -> Result<(), Box<dyn std::error::Error>> {
+pub fn run(input: Option<String>) -> Result<i32, Box<dyn std::error::Error>> {
     let input = read_input!(input, "input/2020/day1.txt");
+    let mut result = 0;
 
     for line in input.lines() {
         let line_as_num = str_to_i32!(line);
@@ -24,9 +25,30 @@ pub fn run(input: Option<String>) -> Result<(), Box<dyn std::error::Error>> {
 
             println!("Number 1: {}\tNumber 2: {}\tAdded: {}", line, number_needed, added);
 
-            break;
+            result = added;
+        } else {
+            continue;
         }
     }
 
-    Ok(())
+    Ok(result)
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::day1;
+
+    #[test]
+    fn day1_part1() {
+        let input = "1721
+                     979
+                     366
+                     299
+                     675
+                     1456";
+
+        let result = day1::run(Some(input.to_string())).unwrap();
+
+        assert_eq!(result, 514579);
+    }
 }
