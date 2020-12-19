@@ -1,3 +1,4 @@
 /target
 Cargo.lock
 Advent of Code site.url
+.vscode
